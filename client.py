@@ -16,7 +16,7 @@ def list_imgs(rootdir):
 
 def sucuri(nprocs):
 	proxy.sucuri(nprocs)
-	print "Processamento de imagens iniciado. Aguardando o termino do do image splitting and merging bands pelo servidor."
+	print "Processamento das imagens iniciado. Aguardando o termino do image splitting and merging bands pelo servidor."
 
 t0 = time.time()
 imagePath = list_imgs(sys.argv[2])
