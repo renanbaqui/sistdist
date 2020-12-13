@@ -15,5 +15,8 @@
 - Aguardar até que o processamento acabe e as imagens processadas estarão dentro da pasta "splitimgs"
 
 > O segundo parâmetro no passo 8 é o número de processadores, nesse exemplo eram 3.
+> Testado em distribuição Debian GNU/Linux 
+
+Exemplo de tratamento de imagem:
 
 ![Antes e Depois](https://github.com/renanbaqui/sistdist/blob/main/processing.png)
