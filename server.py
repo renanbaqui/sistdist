@@ -7,7 +7,7 @@ from pyDF import *
 
 from PIL import Image
 
-save_dir = 'grayimgs'
+save_dir = 'splitimgs'
 
 def list_imgs(rootdir):
     fnames = []
@@ -23,7 +23,7 @@ def list_imgs(rootdir):
 
 def rgb2gray(args):
     fname = args[0]
-    grayname = fname.split('/')[-1]
+    splitname = fname.split('/')[-1]
     img = Image.open(fname)
     
     red, green, blue = img.split()
@@ -35,13 +35,13 @@ def rgb2gray(args):
 
     new_image = Image.merge("RGB", (green, red, blue))
 
-    grayname = save_dir + '/' +  grayname.split('.')[0]  + '.png'
+    splitname = save_dir + '/' +  splitname.split('.')[0]  + '.png'
 
-    new_image.save(grayname)
+    new_image.save(splitname)
 
 
 
-    return grayname
+    return splitname
 
 
 def print_name(args):
