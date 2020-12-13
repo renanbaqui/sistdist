@@ -1,10 +1,11 @@
 # sistdist
 
-# Processamento de Imagem com Sucuri
+# Image Splitting and Merging Bands com Sucuri
 
 # Como Instalar
 
 1) Run pip install Pillow
+Instalar a biblioteca Sucuri
 2) Download lfw from http://vis-www.cs.umass.edu/lfw/lfw.tgz (or any set of images you want to use)
 3) Create "grayimgs" folder inside the folder you unziped this git
 4) Criar uma pasta "dataReceived" e mudar o caminho da pasta dataReceived no codigo de server.py
@@ -15,3 +16,5 @@ Deixar o servidor rodando em um terminal e abrir outro
 8) Wait till the processing is done and the recognized faces images will appear inside recognizedFaces folder
 
 Obs: The second parameter in step 5 is the number of processors you want to use, in my case was 3.
+
+https://auth0.com/blog/image-processing-in-python-with-pillow/
