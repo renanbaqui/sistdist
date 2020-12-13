@@ -4,7 +4,7 @@
 
 1) Instalar a Python Imaging Library (https://pillow.readthedocs.io/en/stable/installation.html) 
 2) Instalar a biblioteca Sucuri (https://www.youtube.com/watch?v=dOxD1VVdEGk)
-3) Criar o diretório "grayimgs" dentro da pasta desse git
+3) Criar o diretório "splitimgs" dentro da pasta desse git
 4) Criar uma pasta "dataReceived" e mudar o caminho da pasta dataReceived no código de server.py
 5) Colocar as imagens dentro do diretório 
 6) Executar python server.py para iniciar o servidor
