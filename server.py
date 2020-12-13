@@ -1,24 +1,47 @@
+import xmlrpclib
+from SimpleXMLRPCServer import SimpleXMLRPCServer
+import logging
 import os
 import sys
+import time
+import cv2
 
 sys.path.append(os.environ['PYDFHOME'])
 from pyDF import *
 
-
 from PIL import Image
 
 save_dir = 'splitimgs'
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+
+server = SimpleXMLRPCServer(
+    ('localhost', 9000),
+    logRequests=True,
+    allow_none=True
+)
+# Mudar este diretorio
+dataReceivedFolder = "/home/osboxes/Downloads/Trabalho/sistdist-main/dataReceived"
+
+# Expose a function
+def server_receive_file(self,directory):
+        with open("dataReceived/"+directory, "wb") as handle:
+            handle.write(self.data)
+            return True
+
+
+server.register_function(server_receive_file)
 
 def list_imgs(rootdir):
     fnames = []
 
     for current, directories, files in os.walk(rootdir):
         for f in files:
-            fnames.append(current + '/' + f)
+        	fnames.append(current + '/' + f)
  
     fnames.sort()
     return fnames
-
 
 
 def rgb2gray(args):
@@ -51,29 +74,41 @@ def print_name(args):
 
 
 
+def sucuri(nprocs):
+    nprocs = nprocs
+    imagePath = list_imgs(dataReceivedFolder)
 
-nprocs = int(sys.argv[1])
-file_list = list_imgs(sys.argv[2])[:1000]
-
-graph = DFGraph()
-sched = Scheduler(graph, nprocs, mpi_enabled = False)
-
-
-
-feed_files = Source(file_list)
-
-convert_file = FilterTagged(rgb2gray, 1)  
-
-pname = Serializer(print_name, 1)
+    graph = DFGraph()
+    sched = Scheduler(graph, nprocs, mpi_enabled = False)
 
 
-graph.add(feed_files)
-graph.add(convert_file)
-graph.add(pname)
+
+    feed_files = Source(imagePath)
+
+    convert_file = FilterTagged(rgb2gray, 1)  
+
+    pname = Serializer(print_name, 1)
 
 
-feed_files.add_edge(convert_file, 0)
-convert_file.add_edge(pname, 0)
+    graph.add(feed_files)
+    graph.add(convert_file)
+    graph.add(pname)
 
 
-sched.start()
+    feed_files.add_edge(convert_file, 0)
+    convert_file.add_edge(pname, 0)
+
+    t0 = time.time()
+    sched.start()
+    t1 = time.time()
+    print "Execution time %.3f" %(t1-t0)
+
+server.register_function(sucuri)
+
+if __name__ == '__main__':
+	# Start the server
+	try:
+	    print('Use Control-C to exit')
+	    server.serve_forever()
+	except KeyboardInterrupt:
+	    print('Exiting')
