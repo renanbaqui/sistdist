@@ -70,7 +70,7 @@ def rgb2gray(args):
 def print_name(args):
     fname = args[0]
 
-    print "Converted %s" %fname
+    print "Convertido %s" %fname
 
 
 
@@ -101,14 +101,14 @@ def sucuri(nprocs):
     t0 = time.time()
     sched.start()
     t1 = time.time()
-    print "Execution time %.3f" %(t1-t0)
+    print "Tempo de execucao: %.3f" %(t1-t0)
 
 server.register_function(sucuri)
 
 if __name__ == '__main__':
 	# Start the server
 	try:
-	    print('Use Control-C to exit')
+	    print('Use Control-C para sair')
 	    server.serve_forever()
 	except KeyboardInterrupt:
-	    print('Exiting')
+	    print('Saindo')
