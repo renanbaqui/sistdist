@@ -15,4 +15,4 @@
 
 Obs: O segundo parâmetro no passo 8 é o número de processadores, nesse caso eram 3.
 
-![alt text](https://github.com/renanbaqui/sistdist/blob/main/processing.png)
+![Antes e Depois](https://github.com/renanbaqui/sistdist/blob/main/processing.png)
