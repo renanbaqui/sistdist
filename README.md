@@ -14,3 +14,5 @@
 10) Esperar até que o processamento acabe e as imagens processadas estarão dentro da pasta "grayimgs"
 
 Obs: O segundo parâmetro no passo 8 é o número de processadores, nesse caso eram 3.
+
+![alt text](https://github.com/renanbaqui/sistdist/processing.png?raw=true)
