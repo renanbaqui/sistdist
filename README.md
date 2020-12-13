@@ -8,7 +8,7 @@
 4) Criar uma pasta "dataReceived" e mudar o caminho da pasta dataReceived no código de server.py
 5) Criar o diretório "imagesHere" de onde ficarão as imagens
 5) Colocar as imagens dentro do diretório 
-6) Executar python server.py para iniciar o servidor
+6) Executar, por exemplo, python server.py 3 "caminho/para/imagesHere" (com as aspas) para iniciar o servidor
 7) Deixar o servidor sendo executado em um terminal e abrir outro
 8) Executar, por exemplo, python client.py 3 "caminho/para/imagesHere" (com as aspas) para iniciar a transferência do client para o servidor
 9) Esperar até que a transferência acabe e o splitting e merging bands das imagens irá começar
