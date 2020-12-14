@@ -13,7 +13,7 @@ from PIL import Image
 
 save_dir = 'splitimgs'
 
-# Set up logging
+# Logging
 logging.basicConfig(level=logging.INFO)
 
 server = SimpleXMLRPCServer(
@@ -24,7 +24,6 @@ server = SimpleXMLRPCServer(
 # Mudar este diretorio
 dataReceivedFolder = "/home/osboxes/Downloads/Trabalho/sistdist-main/dataReceived"
 
-# Expose a function
 def server_receive_file(self,directory):
         with open("dataReceived/"+directory, "wb") as handle:
             handle.write(self.data)
@@ -106,7 +105,7 @@ def sucuri(nprocs):
 server.register_function(sucuri)
 
 if __name__ == '__main__':
-	# Start the server
+	# Inicia o servidor
 	try:
 	    print('Use Control-C para sair')
 	    server.serve_forever()
