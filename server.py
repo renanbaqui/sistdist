@@ -43,7 +43,7 @@ def list_imgs(rootdir):
     return fnames
 
 
-def rgb2gray(args):
+def imgsplitmb(args):
     fname = args[0]
     splitname = fname.split('/')[-1]
     img = Image.open(fname)
@@ -84,7 +84,7 @@ def sucuri(nprocs):
 
     feed_files = Source(imagePath)
 
-    convert_file = FilterTagged(rgb2gray, 1)  
+    convert_file = FilterTagged(imgsplitmb, 1)  
 
     pname = Serializer(print_name, 1)
 
