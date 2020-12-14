@@ -7,17 +7,17 @@
 - Criar o diretório "splitimgs" dentro da pasta desse git
 - Criar uma pasta "dataReceived" e mudar o caminho da pasta dataReceived no código de server.py
 - Criar o diretório "imagesHere" de onde ficarão as imagens a ser processadas
-- Colocar as imagens dentro do diretório 
+- Colocar as imagens dentro do diretório "imagesHere"
 - Executar python server.py para iniciar o servidor
 - Deixar o servidor sendo executado em um terminal e abrir outro
 - Executar, por exemplo, python client.py 3 "caminho/para/imagesHere" (com as aspas) para iniciar a transferência do client para o servidor
 - Esperar até que a transferência acabe e o splitting e merging bands das imagens irá começar
-- Aguardar até que o processamento acabe e as imagens processadas estarão dentro da pasta "splitimgs"
+- Aguardar o final do processamento e as imagens processadas estarão dentro da pasta "splitimgs"
 
-> O segundo parâmetro no passo 8 é o número de processadores, nesse exemplo eram 3.
+> O primeiro argumento em python client.py é o número de processadores, nesse exemplo eram 3.
 
 > Testado em distribuição Debian GNU/Linux 
 
-Exemplo de tratamento de imagem:
+Exemplo de tratamento de imagem com splitting e merging bands:
 
 ![Antes e Depois](https://github.com/renanbaqui/sistdist/blob/main/processing.png)
