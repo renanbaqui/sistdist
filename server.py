@@ -42,7 +42,7 @@ def list_imgs(rootdir):
     fnames.sort()
     return fnames
 
-
+# Função Image Splitting & Merging Bands
 def imgsplitmb(args):
     fname = args[0]
     splitname = fname.split('/')[-1]
